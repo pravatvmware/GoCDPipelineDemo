@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  build-pl:
+  build-pl-B:
     group: serviceB
     label_template: ${COUNT}
     lock_behavior: none
