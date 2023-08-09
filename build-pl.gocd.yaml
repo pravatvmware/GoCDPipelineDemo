@@ -1,0 +1,62 @@
+format_version: 10
+pipelines:
+  build-pl:
+    group: serviceA
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-d5ba67e:
+        git: https://github.com/pravatvmware/getting-started-repo
+        shallow_clone: false
+        auto_update: true
+        branch: test4
+    stages:
+    - build-stg:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          build-job1:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - buildtask1
+                command: ./build
+                run_if: passed
+    - package-stg:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          package-job1:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - package task1
+                command: ./build
+                run_if: passed
+    - push-image-stg:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          push-image-job1:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - push-img-job
+                command: ./build
+                run_if: passed

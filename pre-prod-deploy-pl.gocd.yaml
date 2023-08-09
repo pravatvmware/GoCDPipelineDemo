@@ -1,0 +1,27 @@
+format_version: 10
+pipelines:
+  pre-prod-deploy-pl:
+    group: serviceA
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      helm-charts-stg:
+        ignore_for_scheduling: false
+        pipeline: helm-charts-stg
+        stage: helm-charts-update-stag
+    stages:
+    - pre-prod-deploy-stg:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          pre-prod-deploy-job:
+            timeout: 0
+            tasks:
+            - exec:
+                command: ls
+                run_if: passed
