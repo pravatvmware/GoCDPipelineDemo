@@ -11,6 +11,20 @@ pipelines:
         pipeline: pre-prod-deploy-pl
         stage: pre-prod-deploy-stg
     stages:
+    - approve-stage:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: manual
+          allow_only_on_success: false
+        jobs:
+          approve-job:
+            timeout: 0
+            tasks:
+            - exec:
+                command: ls
+                run_if: passed
     - prod-deplyment-stg:
         fetch_materials: true
         keep_artifacts: false
