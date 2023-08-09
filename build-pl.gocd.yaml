@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  build-pl:
+  build-pl-A:
     group: serviceA
     label_template: ${COUNT}
     lock_behavior: none
