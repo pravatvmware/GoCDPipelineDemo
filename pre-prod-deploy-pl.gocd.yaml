@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   pre-prod-deploy-pl:
-    group: serviceA
+    group: serviceB
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
