@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  prod-deplyment-pl:
+  prod-deplyment-pl-B:
     group: serviceB
     label_template: ${COUNT}
     lock_behavior: none
