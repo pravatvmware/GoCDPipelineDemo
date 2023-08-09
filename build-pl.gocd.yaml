@@ -41,7 +41,7 @@ pipelines:
             tasks:
             - exec:
                 arguments:
-                - package task1
+                - package
                 command: ./build
                 run_if: passed
     - push-image-stg:
