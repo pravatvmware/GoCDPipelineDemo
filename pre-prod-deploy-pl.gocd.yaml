@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  pre-prod-deploy-pl:
+  pre-prod-deploy-pl-B:
     group: serviceB
     label_template: ${COUNT}
     lock_behavior: none
