@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  helm-charts-stg:
+  helm-charts-stg-B:
     group: serviceB
     label_template: ${COUNT}
     lock_behavior: none
