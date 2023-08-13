@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  uat-deploy-pl-A:
+  uat-deploy-pl:
     group: serviceA
     label_template: ${COUNT}
     lock_behavior: none
