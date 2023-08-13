@@ -10,7 +10,7 @@ pipelines:
         git: https://github.com/pravatvmware/getting-started-repoB
         shallow_clone: false
         auto_update: true
-        branch: test4
+        branch: develop
     stages:
     - build-stg:
         fetch_materials: true
