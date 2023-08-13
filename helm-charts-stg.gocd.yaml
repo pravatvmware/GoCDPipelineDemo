@@ -8,7 +8,7 @@ pipelines:
     materials:
       build-pl:
         ignore_for_scheduling: false
-        pipeline: build-pl
+        pipeline: build-pl-B
         stage: push-image-stg
     stages:
     - helm-charts-update-stag:
