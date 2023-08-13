@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  prod-deplyment-pl:
+  prod-deplyment-pl-B:
     group: serviceB
     label_template: ${COUNT}
     lock_behavior: none
@@ -8,7 +8,7 @@ pipelines:
     materials:
       pre-prod-deploy-pl:
         ignore_for_scheduling: false
-        pipeline: pre-prod-deploy-pl
+        pipeline: pre-prod-deploy-pl-B
         stage: pre-prod-deploy-stg
     stages:
     - approve-stage:
